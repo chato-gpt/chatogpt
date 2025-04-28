@@ -1,7 +1,8 @@
+/* Estilos globais */
 body {
   background: #121212;
-  font-family: 'Courier New', monospace;
   color: #e0e0e0;
+  font-family: 'Courier New', monospace;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -11,17 +12,20 @@ body {
   padding: 20px;
 }
 
+/* Logo */
 .logo {
   width: 200px;
   margin: 20px auto;
   display: block;
 }
 
+/* Título */
 h1 {
   font-size: 36px;
   color: #00ff88;
 }
 
+/* Botão principal */
 #gerarResposta {
   padding: 15px 30px;
   font-size: 20px;
@@ -39,6 +43,7 @@ h1 {
   background: linear-gradient(45deg, #00c3ff, #00ff88);
 }
 
+/* Caixa de resposta */
 #resposta {
   margin-top: 30px;
   padding: 25px;
@@ -54,12 +59,14 @@ h1 {
   animation: pulse 2s infinite;
 }
 
+/* Efeito de pulsação */
 @keyframes pulse {
   0% { box-shadow: 0 0 5px #00ff88; }
   50% { box-shadow: 0 0 20px #00c3ff; }
   100% { box-shadow: 0 0 5px #00ff88; }
 }
 
+/* Botão do WhatsApp */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -79,6 +86,7 @@ h1 {
   background: #1ebe57;
 }
 
+/* Fogos de artifício */
 #fogos-container {
   position: fixed;
   top: 0;
@@ -99,36 +107,4 @@ h1 {
 @keyframes subir {
   0% { transform: translateY(0) scale(1); opacity: 1; }
   100% { transform: translateY(-300px) scale(0.5); opacity: 0; }
-}
-
-.animacao-pular {
-  animation: pular 0.5s ease;
-}
-
-.animacao-girar {
-  animation: girar 0.5s ease;
-}
-
-.animacao-tremer {
-  animation: tremer 0.5s ease;
-}
-
-@keyframes pular {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes girar {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@keyframes tremer {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
 }
