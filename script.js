@@ -1,43 +1,130 @@
-const respostasRudes = [
-  "Vai pesquisar no Google, preguiçoso!",
-  "Compra uma Barsa e vai estudar!",
-  "Sério que você precisa de ajuda pra isso?",
-  "Até uma pedra saberia essa resposta.",
-  "Não sou seu professor particular.",
-  "Já pensou em usar o cérebro?",
-  "Não tenho paciência pra isso hoje.",
-  "Você tá de brincadeira comigo, né?",
-  "Pergunta pro seu vizinho, talvez ele saiba.",
-  "Vai estudar e para de me encher!",
-  "Achei que ninguém poderia fazer uma pergunta pior, até você chegar.",
-  "Nem vale a pena responder isso.",
-  "Google tá aí pra isso, mané!",
-  "Isso aí até minha avó sabe!",
-  "Me poupe, se poupe, nos poupe.",
-  "Não sou pago pra te ensinar coisas básicas.",
-  "Que pergunta imbecil, faça outra.",
-  "Cara... sério mesmo que você perguntou isso?",
-  "Tente de novo. Talvez menos vergonha dessa vez.",
-  "Seja útil, vai ler um livro."
-];
-
-// Atualiza o link do botão de WhatsApp
-function atualizarBotaoWhatsapp(pergunta, resposta) {
-  const link = `https://wa.me/?text=Olha%20essa%20resposta%20genial%20do%20ChatOGPT:%0A%0A"${pergunta}"%20-%3E%20"${resposta}"%0A%0AConfere%20tamb%C3%A9m:%20https://chato-gpt.github.io/chatogpt/`;
-  document.getElementById("botaoWhatsapp").href = link;
+body {
+  background: #fff8e7;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-function responder() {
-  const pergunta = document.getElementById("pergunta").value;
-  const respostaElemento = document.getElementById("resposta");
+.container {
+  padding: 20px;
+}
 
-  if (pergunta.trim() === "") {
-    respostaElemento.innerText = "Escreve alguma coisa, ô vazio!";
-    atualizarBotaoWhatsapp("Pergunta vazia", "Escreve alguma coisa, ô vazio!");
-    return;
-  }
+.logo {
+  width: 200px;
+  margin: 20px auto;
+  display: block;
+}
 
-  const respostaAleatoria = respostasRudes[Math.floor(Math.random() * respostasRudes.length)];
-  respostaElemento.innerText = respostaAleatoria;
-  atualizarBotaoWhatsapp(pergunta, respostaAleatoria);
+h1 {
+  font-size: 36px;
+  color: #ff5722;
+}
+
+#gerarResposta {
+  padding: 15px 25px;
+  font-size: 20px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+#gerarResposta:hover {
+  background-color: #e64a19;
+}
+
+#resposta {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffe259, #ffa751);
+  border-radius: 15px;
+  font-size: 22px;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: pulse 2s infinite;
+  transition: 0.3s;
+}
+
+#resposta:hover {
+  transform: scale(1.02);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffa751; }
+  50% { box-shadow: 0 0 20px #ffe259; }
+  100% { box-shadow: 0 0 10px #ffa751; }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-decoration: none;
+  z-index: 1000;
+}
+
+#fogos-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.emoji-fogo {
+  position: absolute;
+  font-size: 2rem;
+  animation: subir 1s ease-out forwards;
+}
+
+@keyframes subir {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-300px) scale(0.5); opacity: 0; }
+}
+
+/* Animações das respostas */
+@keyframes pular {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes tremer {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animacao-pular {
+  animation: pular 0.6s ease;
+}
+
+.animacao-girar {
+  animation: girar 0.6s ease;
+}
+
+.animacao-tremer {
+  animation: tremer 0.6s ease;
 }
