@@ -1,2 +1,2 @@
 # chatogpt
-"O chatbot mais rude da internet."
+"Totalmente baseado em I.A. - Ignorância Anormal"
