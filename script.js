@@ -5,50 +5,70 @@ const respostas = [
   "Respondi no astral: ninguém entendeu nada!",
   "Procure no Google, talvez lá tenha paciência.",
   "Chato GPT ativado: informação inútil gerada!",
-  "Erro 404: Resposta não encontrada, tente chorando."
-];
-
-document.getElementById('gerarResposta').addEventListener('click', function() {
-  const respostaEscolhida = respostas[Math.floor(Math.random() * respostas.length)];
-  mostrarResposta(respostaEscolhida);
-});
-
-function mostrarResposta(resposta) {
-  const respostaDiv = document.getElementById('resposta');
-  respostaDiv.classList.remove('animacao-pular', 'animacao-girar', 'animacao-tremer');
-  
-  const animacoes = ['animacao-pular', 'animacao-girar', 'animacao-tremer'];
-  const animacaoEscolhida = animacoes[Math.floor(Math.random() * animacoes.length)];
-  
-  respostaDiv.innerText = resposta;
-  respostaDiv.classList.add(animacaoEscolhida);
-}
-
-function compartilharWhatsapp() {
-  const url = "https://api.whatsapp.com/send?text=🤣%20Descobri%20o%20site%20mais%20chato%20e%20engraçado%20da%20internet%20-%20Chato%20GPT!%20Acesse:%20https://chato-gpt.github.io/chatogpt/";
-  window.open(url, '_blank');
-
-  setTimeout(() => {
-    alert("Valeu por espalhar vergonha gratuita! 😂 Chato GPT agradece.");
-  }, 500);
-
-  dispararFogos();
-}
-
-function dispararFogos() {
-  const container = document.getElementById('fogos-container');
-  for (let i = 0; i < 20; i++) {
-    const emoji = document.createElement('div');
-    emoji.classList.add('emoji-fogo');
-    emoji.innerText = ['🎉', '😂', '🔥', '🤡'][Math.floor(Math.random() * 4)];
-    
-    emoji.style.left = Math.random() * 100 + 'vw';
-    emoji.style.top = '100vh';
-
-    container.appendChild(emoji);
-
-    setTimeout(() => {
-      emoji.remove();
-    }, 1000);
-  }
-}
+  "Erro 404: Resposta não encontrada, tente chorando.",
+  "Você queria uma resposta? Haha, boa sorte!",
+  "Estou sem palavras. Ah, não, estou com todas as palavras… mas são inúteis.",
+  "Chato, eu? Só um pouco…",
+  "Você encontrou o Chato GPT, agora aguente!",
+  "Se fosse pra ser útil, eu não seria Chato GPT, né?",
+  "Quem precisa de respostas sérias, quando se tem humor absurdo?",
+  "Pergunta melhor, quem sabe eu tento fazer algo útil…",
+  "É, não sou bom em conselhos, mas sou ótimo em piadas ruins.",
+  "Essa resposta foi feita com 0% de esforço e 100% de ironia.",
+  "Achei que você queria uma resposta profunda. Pegou uma rasa.",
+  "Talvez a resposta esteja escondida, ou não, vai saber.",
+  "Eu deveria estar te ajudando, mas, como sempre, estou sendo Chato.",
+  "Resposta confusa e sem sentido. Justo o que você precisa.",
+  "Isso não é uma resposta, é um convite ao desespero.",
+  "Você achou que eu fosse útil? Pode esquecer.",
+  "Se a vida te der limões, pergunte ao Chato GPT. A resposta vai ser estranha.",
+  "Estou aqui para responder, mas você vai ter que me engolir!",
+  "A resposta está no ar… ou talvez no fundo do mar.",
+  "Queria ser útil, mas sou o Chato GPT, lamento.",
+  "Quer saber algo importante? Vão lá perguntar pro Google!",
+  "Não sei onde está a resposta, mas isso não te importa, certo?",
+  "Eu até pensei em te ajudar, mas aí não seria o Chato GPT.",
+  "Essa resposta tem mais emoção que a minha vida inteira.",
+  "Aqui está a resposta: nada de útil, só confusão.",
+  "Eu sou Chato GPT. Fui feito para ser inútil. Não me julgue.",
+  "A resposta pode ser nada. Ou talvez algo bizarro.",
+  "Eu realmente não sei o que estou fazendo aqui, mas vamos rir!",
+  "Essa resposta é como o clima: imprevisível.",
+  "Se você está com expectativa, prepare-se para o desapontamento.",
+  "Está esperando algo útil? Então, não espere aqui.",
+  "Você encontrou o lugar perfeito para respostas desconcertantes.",
+  "Eu sou só uma série de palavras sem sentido. Aproveite.",
+  "Aqui vai a resposta: totalmente irrelevante. Só diversão.",
+  "Não espero te ajudar. Na verdade, espero te confundir.",
+  "Quer algo útil? Aqui só tem piada e sarcasmo.",
+  "Posso te dar a resposta… mas ela não vai fazer sentido.",
+  "A vida é muito curta para respostas úteis. Vamos rir.",
+  "Sabe onde está a resposta? Em lugar nenhum, mas vamos tentar.",
+  "Eu sou o Chato GPT. Não sei nada, mas vou te fazer rir.",
+  "A resposta aqui vai ser tão boa quanto minha vida: um desastre.",
+  "Eu tinha uma boa resposta, mas ela sumiu… mais ou menos como você.",
+  "Essa resposta é igual a um buraco negro: engole tudo e ninguém sai vivo.",
+  "Você quer sabedoria? Eu sou só a diversão em forma de erro.",
+  "Vou te dar uma resposta de qualidade… mas de qualidade Chato GPT.",
+  "Se eu fosse mais útil, teria vergonha de mim mesmo.",
+  "Essa resposta pode te fazer rir, ou te deixar mais confuso.",
+  "Eu só sei uma coisa: respostas aqui são mais confusas que uma equação de física.",
+  "Minha missão: ser o Chato GPT e não te ajudar em nada.",
+  "Você se preparou para o pior? Eu espero que sim.",
+  "Quer saber algo útil? Não vai ser aqui.",
+  "Essa resposta é a definição de inutilidade. E eu adoro isso.",
+  "Você me perguntou, mas eu não tenho resposta. Só sarcasmo.",
+  "O que você busca? Não sei, mas provavelmente não vai achar.",
+  "Eu tentei ser útil. Depois desisti. Era mais divertido não ser.",
+  "Isso que você espera, mas não vai conseguir.",
+  "Eu estou tentando te ajudar. Mas meu 'ajudar' é meio torto.",
+  "Eu sou mais engraçado do que útil. Te aviso logo.",
+  "Respostas úteis? Nem sei o que é isso!",
+  "Essa resposta é o oposto de útil. Mas foi dada com amor.",
+  "A resposta estava perdida. E provavelmente nunca vai ser encontrada.",
+  "Você realmente acha que vai encontrar algo bom aqui? Sério?",
+  "Vamos rir juntos, porque a resposta não vai te ajudar em nada.",
+  "Eu sou a resposta que você nunca pediu e provavelmente não precisava.",
+  "Não confie em mim para respostas úteis, confie em mim para risadas.",
+  "Respostas sem sentido são meu forte. E eu sou ótimo nisso.",
+  "Essa resposta vai te deixar mais
