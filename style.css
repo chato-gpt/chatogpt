@@ -1,6 +1,7 @@
 body {
-  background: #fff8e7;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #121212;
+  font-family: 'Courier New', monospace;
+  color: #e0e0e0;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -18,60 +19,64 @@ body {
 
 h1 {
   font-size: 36px;
-  color: #ff5722;
+  color: #00ff88;
 }
 
 #gerarResposta {
-  padding: 15px 25px;
+  padding: 15px 30px;
   font-size: 20px;
-  background-color: #ff5722;
-  color: white;
+  background: linear-gradient(45deg, #00ff88, #00c3ff);
+  color: #121212;
   border: none;
-  border-radius: 12px;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 20px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 #gerarResposta:hover {
-  background-color: #e64a19;
+  background: linear-gradient(45deg, #00c3ff, #00ff88);
 }
 
 #resposta {
   margin-top: 30px;
   padding: 25px;
-  background: linear-gradient(135deg, #ffe259, #ffa751);
-  border-radius: 15px;
+  background: #1e1e1e;
+  border: 2px dashed #00ff88;
+  border-radius: 20px;
   font-size: 22px;
-  color: #333;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   animation: pulse 2s infinite;
-  transition: 0.3s;
-}
-
-#resposta:hover {
-  transform: scale(1.02);
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 10px #ffa751; }
-  50% { box-shadow: 0 0 20px #ffe259; }
-  100% { box-shadow: 0 0 10px #ffa751; }
+  0% { box-shadow: 0 0 5px #00ff88; }
+  50% { box-shadow: 0 0 20px #00c3ff; }
+  100% { box-shadow: 0 0 5px #00ff88; }
 }
 
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366;
-  color: white;
-  border-radius: 50%;
+  background: #25d366;
+  color: #121212;
   padding: 15px;
   font-size: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   text-decoration: none;
   z-index: 1000;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe57;
 }
 
 #fogos-container {
@@ -96,7 +101,18 @@ h1 {
   100% { transform: translateY(-300px) scale(0.5); opacity: 0; }
 }
 
-/* Animações das respostas */
+.animacao-pular {
+  animation: pular 0.5s ease;
+}
+
+.animacao-girar {
+  animation: girar 0.5s ease;
+}
+
+.animacao-tremer {
+  animation: tremer 0.5s ease;
+}
+
 @keyframes pular {
   0% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
@@ -115,16 +131,4 @@ h1 {
   50% { transform: translateX(5px); }
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
-}
-
-.animacao-pular {
-  animation: pular 0.6s ease;
-}
-
-.animacao-girar {
-  animation: girar 0.6s ease;
-}
-
-.animacao-tremer {
-  animation: tremer 0.6s ease;
 }
