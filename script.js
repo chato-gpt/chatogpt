@@ -1,10 +1,11 @@
 const respostas = [
-  "Nossa, que pergunta profunda... só que não!",
-  "Pergunta melhor da próxima vez, tá?",
-  "Vou fingir que entendi...",
-  "Resposta gerada aleatoriamente para sua alegria!",
-  "Erro 404: Paciência não encontrada.",
-  "Chato GPT em modo turbo de enrolação!"
+  "Parabéns, você perguntou nada com coisa nenhuma!",
+  "Resposta digna de um prêmio... de enrolação!",
+  "Se fosse pra responder sério, eu seria pago, né?",
+  "Respondi no astral: ninguém entendeu nada!",
+  "Procure no Google, talvez lá tenha paciência.",
+  "Chato GPT ativado: informação inútil gerada!",
+  "Erro 404: Resposta não encontrada, tente chorando."
 ];
 
 document.getElementById('gerarResposta').addEventListener('click', function() {
@@ -28,7 +29,7 @@ function compartilharWhatsapp() {
   window.open(url, '_blank');
 
   setTimeout(() => {
-    alert("Valeu por espalhar a vergonha alheia! 😂 Você é oficialmente cúmplice do Chato GPT.");
+    alert("Valeu por espalhar vergonha gratuita! 😂 Chato GPT agradece.");
   }, 500);
 
   dispararFogos();
