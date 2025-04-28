@@ -240,4 +240,26 @@ function responder() {
 
   const respostaAleatoria = respostasRudes[Math.floor(Math.random() * respostasRudes.length)];
   respostaElemento.innerText = respostaAleatoria;
+} 
+// Atualiza o link do botão de WhatsApp
+function atualizarBotaoWhatsapp(pergunta, resposta) {
+  const link = `https://wa.me/?text=Olha%20essa%20resposta%20genial%20do%20ChatOGPT:%0A%0A"${pergunta}"%20-%3E%20"${resposta}"%0A%0AConfere%20tamb%C3%A9m:%20https://seu-usuario.github.io/chatogpt/`;
+  document.getElementById("botaoWhatsapp").href = link;
 }
+
+// Modificar a função "responder" para chamar atualizarBotaoWhatsapp
+function responder() {
+  const pergunta = document.getElementById("pergunta").value;
+  const respostaElemento = document.getElementById("resposta");
+
+  if (pergunta.trim() === "") {
+    respostaElemento.innerText = "Escreve alguma coisa, ô vazio!";
+    atualizarBotaoWhatsapp("Pergunta vazia", "Escreve alguma coisa, ô vazio!");
+    return;
+  }
+
+  const respostaAleatoria = respostasRudes[Math.floor(Math.random() * respostasRudes.length)];
+  respostaElemento.innerText = respostaAleatoria;
+  atualizarBotaoWhatsapp(pergunta, respostaAleatoria);
+}
+
