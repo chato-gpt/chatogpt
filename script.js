@@ -243,7 +243,7 @@ function responder() {
 } 
 // Atualiza o link do botão de WhatsApp
 function atualizarBotaoWhatsapp(pergunta, resposta) {
-  const link = `https://wa.me/?text=Olha%20essa%20resposta%20genial%20do%20ChatOGPT:%0A%0A"${pergunta}"%20-%3E%20"${resposta}"%0A%0AConfere%20tamb%C3%A9m:%20https://seu-usuario.github.io/chatogpt/`;
+  const link = `https://wa.me/?text=Olha%20essa%20resposta%20genial%20do%20ChatOGPT:%0A%0A"${pergunta}"%20-%3E%20"${resposta}"%0A%0AConfere%20tamb%C3%A9m:%20https://chato-gpt.github.io/chatogpt/`;
   document.getElementById("botaoWhatsapp").href = link;
 }
 
