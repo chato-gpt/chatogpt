@@ -2,21 +2,41 @@ body {
   background-color: #121212;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin: 0;
+}
+
+.topo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+h1 {
+  margin: 10px 0 5px 0;
+  font-size: 32px;
+}
+
+.slogan {
+  font-size: 16px;
+  color: #999;
 }
 
 .chatbox {
   width: 90%;
   max-width: 600px;
-  height: 70%;
+  height: 55%;
   background-color: #1e1e1e;
   border: 1px solid #333;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 20px 0;
   padding: 10px;
   overflow-y: auto;
   display: flex;
@@ -44,7 +64,6 @@ body {
   width: 90%;
   max-width: 600px;
   display: flex;
-  margin-top: 10px;
 }
 
 #perguntaInput {
@@ -70,4 +89,24 @@ body {
 
 #enviarBtn:hover {
   background-color: #005bb5;
+}
+
+.rodape {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#whatsappBtn {
+  padding: 10px 20px;
+  background-color: #25d366;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#whatsappBtn:hover {
+  background-color: #128c7e;
 }
