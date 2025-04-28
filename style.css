@@ -1,86 +1,73 @@
 body {
   background-color: #121212;
   color: #ffffff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
-.chat-container {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
+.chatbox {
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 20px #00ff88;
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  text-align: center;
-  color: #00ff88;
-  margin-bottom: 20px;
-}
-
-.chat-box {
-  background: #2c2c2c;
+  max-width: 600px;
+  height: 70%;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
   border-radius: 10px;
-  padding: 15px;
-  height: 300px;
+  margin-top: 20px;
+  padding: 10px;
   overflow-y: auto;
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .mensagem {
-  background: #3c3c3c;
-  padding: 10px 15px;
-  border-radius: 10px;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
   max-width: 80%;
 }
 
-.bot {
-  align-self: flex-start;
-  background-color: #00c3ff;
-  color: #000;
+.user {
+  background-color: #0a84ff;
+  align-self: flex-end;
 }
 
-.user {
-  align-self: flex-end;
-  background-color: #00ff88;
-  color: #000;
+.bot {
+  background-color: #333333;
+  align-self: flex-start;
 }
 
 .input-area {
+  width: 90%;
+  max-width: 600px;
   display: flex;
-  gap: 10px;
+  margin-top: 10px;
 }
 
-input[type="text"] {
+#perguntaInput {
   flex: 1;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
   border: none;
-  outline: none;
+  border-radius: 8px 0 0 8px;
+  background-color: #222;
+  color: white;
 }
 
-button {
-  background-color: #00ff88;
-  color: #000;
-  padding: 10px 20px;
+#enviarBtn {
+  padding: 15px;
+  background-color: #0a84ff;
   border: none;
-  border-radius: 8px;
+  border-radius: 0 8px 8px 0;
+  color: white;
   cursor: pointer;
-  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: #00c3ff;
+#enviarBtn:hover {
+  background-color: #005bb5;
 }
