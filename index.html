@@ -1,21 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>CHATOGPT - O Chat Mais Rude da Internet</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Chato GPT 🤡 Deluxe</title>
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Estilo do título */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    /* Spinner de carregamento */
+    #spinner {
+      margin: 20px auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid #555;
+      border-top: 5px solid #ff4444;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Mensagem de carregamento */
+    #loading-message {
+      margin: 20px;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    /* Estilo dos botões */
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: linear-gradient(45deg, #ff4444, #ff8844);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #ff8844, #ff4444);
+      transform: scale(1.05);
+    }
+
+    /* Campo de pergunta */
+    #campo-pergunta {
+      margin-top: 20px;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    /* Área de resposta */
+    #resposta {
+      margin-top: 30px;
+      font-size: 24px;
+      min-height: 80px;
+      animation: aparecer 0.5s ease;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <h1>🤖 CHATOGPT</h1>
-    <p>Faça sua pergunta... se tiver coragem!</p>
 
-    <div id="chatbox">
-        <input type="text" id="userInput" placeholder="Digite sua pergunta...">
-        <button onclick="generateRudeResponse()">Perguntar</button>
-    </div>
+  <h1>Chato GPT 🤡 Deluxe</h1>
 
-    <div id="response"></div>
+  <div id="spinner"></div>
+  <div id="loading-message">Carregando absurdos...</div>
 
-    <script src="script.js"></script>
+  <input type="text" id="campo-pergunta" placeholder="Digite sua dúvida absurda...">
+  <br>
+  <button onclick="gerarResposta()">Perguntar</button>
+
+  <div id="resposta"></div>
+
+  <button id="botao-chato" onclick="ativarModoChato()">Ativar Chato Extremo</button>
+  <button id="nao-clique" onclick="easterEgg()">Não Clique</button>
+
+  <!-- Som de erro -->
+  <audio id="erro-som" src="https://www.myinstants.com/media/sounds/windows-xp-error.mp3" preload="auto"></audio>
+
+  <script>
+    // Frases de loading
+    const frasesDeCarregamento = [
+      "Carregando… enquanto repensamos sua existência.",
+      "Buscando respostas na deep web da vergonha alheia.",
+      "Seu pedido está sendo ignorado com sucesso!",
+      "Preparando sarcasmo fresquinho pra você...",
+      "Inventando mentiras convincentes...",
+      "Atualizando banco de respostas inúteis...",
+      "Puxando conteúdo diretamente da mente do Didi Mocó...",
+      "Processando sua falta de paciência..."
+    ];
+
+    // Perguntas absurdas para o placeholder
+    const perguntasAbsurdas = [
+      "É possível ensinar física para uma geladeira?",
+      "Se eu plantar miojo, nasce lasanha?",
+      "Qual é o CPF do Pikachu?",
+      "Se eu correr no sentido contrário da Terra, ganho horas?",
+      "Quantos patos equivalem a uma baleia?",
+      "Como faço amizade com um poste?"
+    ];
+
+    // Respostas normais
+    const respostasNormais = [
+      "Boa pergunta! Vou fingir que entendi.",
+      "Resposta em manutenção... tente nunca mais.",
+      "Talvez, mas só em outra galáxia.",
+      "Resposta a caminho... mas de Uber lotado.",
+      "Com toda certeza da dúvida: talvez.",
+      "Isso aí até o Google fingiu que não viu."
+    ];
+
+    // Respostas Chato Extremo
+    const respostasChatas = [
+      "Essa pergunta merece um prêmio de inutilidade.",
+      "Resposta bloqueada por falta de paciência.",
+      "Prefiro não responder para não perder meu tempo.",
+      "Deveria ter pensado duas vezes antes de perguntar isso.",
+      "Não vou responder, mas obrigada pelo entretenimento.",
+      "Se eu tivesse moedas, jogava uma pra você ir pedir outra resposta."
+    ];
+
+    let modoChatoAtivado = false;
+
+    // Função para frase de loading
+    function fraseAleatoria() {
+      const index = Math.floor(Math.random() * frasesDeCarregamento.length);
+      document.getElementById('loading-message').innerText = frasesDeCarregamento[index];
+    }
+
+    // Função para sugestão absurda
+    function sugestaoAleatoria() {
+      const index = Math.floor(Math.random() * perguntasAbsurdas.length);
+      document.getElementById('campo-pergunta').placeholder = perguntasAbsurdas[index];
+    }
+
+    // Função para ativar/desativar modo chato
+    function ativarModoChato() {
+      modoChatoAtivado = !modoChatoAtivado;
+      document.getElementById('botao-chato').innerText = modoChatoAtivado ? "Desativar Chato Extremo" : "Ativar Chato Extremo";
+      alert(modoChatoAtivado ? "Modo Chato Extremo ativado!" : "Modo Chato Extremo desativado!");
+    }
+
+    // Função para gerar resposta
+    function gerarResposta() {
+      const pergunta = document.getElementById('campo-pergunta').value.trim();
+      
+      if (!pergunta) {
+        tocarErro();
+        document.getElementById('resposta').innerText = "Digite algo antes, zé!";
+        return;
+      }
+
+      const lista = modoChatoAtivado ? respostasChatas : respostasNormais;
+      const index = Math.floor(Math.random() * lista.length);
+      document.getElementById('resposta').innerText = lista[index];
+    }
+
+    // Função Easter Egg
+    function easterEgg() {
+      alert("Você clicou! Agora deve 1 pizza para o criador do site.");
+    }
+
+    // Função tocar som de erro
+    function tocarErro() {
+      document.getElementById('erro-som').play();
+    }
+
+    // Rodar frases iniciais ao carregar
+    window.onload = function() {
+      fraseAleatoria();
+      sugestaoAleatoria();
+      // Atualizar loading a cada 5s
+      setInterval(fraseAleatoria, 5000);
+    };
+  </script>
+
 </body>
 </html>
