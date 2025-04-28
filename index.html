@@ -4,42 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chato GPT</title>
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
-  <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
-    crossorigin="anonymous"></script>
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-  <div class="container">
-    <img src="logo.png" alt="Chato GPT" class="logo">
+  <div class="chat-container">
     <h1>Chato GPT</h1>
-    <button id="gerarResposta">Gerar Resposta Chata 🤡</button>
-    <div id="resposta">Clique no botão para receber uma resposta inútil!</div>
-    
-    <!-- Botão flutuante do WhatsApp -->
-    <a href="javascript:void(0);" class="whatsapp-float" onclick="compartilharWhatsapp()">💬</a>
-    
-    <!-- Efeitos visuais -->
-    <div id="fogos-container"></div>
+    <div class="chat-box" id="chatBox">
+      <div class="mensagem bot">Pergunte qualquer coisa... ou não. Eu sou inútil de qualquer jeito.</div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="perguntaInput" placeholder="Digite sua pergunta aqui..." autofocus>
+      <button id="enviarBtn">Perguntar</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
-  
 </body>
 </html>
