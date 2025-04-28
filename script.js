@@ -1,24 +1,24 @@
 const respostasRudes = [
-  "Vai pesquisar no Google, preguiçoso!",
-  "Compra uma Barsa e vai estudar!",
-  "Sério que você precisa de ajuda pra isso?",
-  "Até uma pedra saberia essa resposta.",
-  "Não sou seu professor particular.",
-  "Já pensou em usar o cérebro?",
-  "Não tenho paciência pra isso hoje.",
-  "Você tá de brincadeira comigo, né?",
-  "Pergunta pro seu vizinho, talvez ele saiba.",
-  "Vai estudar e para de me encher!",
-  "Achei que ninguém poderia fazer uma pergunta pior, até você chegar.",
-  "Nem vale a pena responder isso.",
-  "Google tá aí pra isso, mané!",
-  "Isso aí até minha avó sabe!",
-  "Me poupe, se poupe, nos poupe.",
-  "Não sou pago pra te ensinar coisas básicas.",
-  "Que pergunta imbecil, faça outra.",
-  "Cara... sério mesmo que você perguntou isso?",
-  "Tente de novo. Talvez menos vergonha dessa vez.",
-  "Seja útil, vai ler um livro."
+"Vai pesquisar no Google, preguiçoso!",
+"Compra uma Barsa e vai estudar!",
+"Sério que você precisa de ajuda pra isso?",
+"Até uma pedra saberia essa resposta.",
+"Não sou seu professor particular.",
+"Já pensou em usar o cérebro?",
+"Não tenho paciência pra isso hoje.",
+"Você tá de brincadeira comigo, né?",
+"Pergunta pro seu vizinho, talvez ele saiba.",
+"Vai estudar e para de me encher!",
+"Achei que ninguém poderia fazer uma pergunta pior, até você chegar.",
+"Nem vale a pena responder isso.",
+"Google tá aí pra isso, mané!",
+"Isso aí até minha avó sabe!",
+"Me poupe, se poupe, nos poupe.",
+"Não sou pago pra te ensinar coisas básicas.",
+"Que pergunta imbecil, faça outra.",
+"Cara... sério mesmo que você perguntou isso?",
+"Tente de novo. Talvez menos vergonha dessa vez.",
+"Seja útil, vai ler um livro."
 "Resposta? Eu mal entendi a pergunta."  
 "Sei lá, pergunta para o Google."  
 "Tô ocupado tomando café, depois a gente vê isso aí."  
@@ -119,13 +119,6 @@ const respostasRudes = [
 "Resposta randomizada: Bife acebolado."  
 "Errei tentando acertar. Valeu?"  
 "Isso aí é mistério da vida, melhor aceitar."
-Perfeito!  
-Entendi: você quer algo **mais ácido**, **mais absurdo** e ainda mais **"sem noção"**, pra combinar melhor com o estilo do seu **Chato-GPT**.
-
-Aqui vão **100 novas respostas**, no estilo **humor ácido, sarcástico e absurdo**:
-
----
-
 "Se eu soubesse, você seria o último a saber."  
 "Essa pergunta era melhor ter ficado na sua cabeça."  
 "Respondo? Respondo. Errado, mas respondo."  
