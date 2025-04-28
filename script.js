@@ -1,246 +1,32 @@
 const respostasRudes = [
-"Vai pesquisar no Google, preguiçoso!",
-"Compra uma Barsa e vai estudar!",
-"Sério que você precisa de ajuda pra isso?",
-"Até uma pedra saberia essa resposta.",
-"Não sou seu professor particular.",
-"Já pensou em usar o cérebro?",
-"Não tenho paciência pra isso hoje.",
-"Você tá de brincadeira comigo, né?",
-"Pergunta pro seu vizinho, talvez ele saiba.",
-"Vai estudar e para de me encher!",
-"Achei que ninguém poderia fazer uma pergunta pior, até você chegar.",
-"Nem vale a pena responder isso.",
-"Google tá aí pra isso, mané!",
-"Isso aí até minha avó sabe!",
-"Me poupe, se poupe, nos poupe.",
-"Não sou pago pra te ensinar coisas básicas.",
-"Que pergunta imbecil, faça outra.",
-"Cara... sério mesmo que você perguntou isso?",
-"Tente de novo. Talvez menos vergonha dessa vez.",
-"Seja útil, vai ler um livro."
-"Resposta? Eu mal entendi a pergunta."  
-"Sei lá, pergunta para o Google."  
-"Tô ocupado tomando café, depois a gente vê isso aí."  
-"Resposta gerada com base no puro chute."  
-"Pra quê tanta curiosidade, hein?"  
-"Procurei, não achei, desisti."  
-"Eu responderia, mas estou com preguiça."  
-"Resposta exclusiva para quem me traz um café."  
-"Dá pra esperar? Tô jogando Candy Crush."  
-"Calculando... Ah, deu preguiça."  
-"Erro 404: Resposta não encontrada."  
-"Vou falar qualquer coisa só pra parecer que sei."  
-"Finge que eu respondi certo, por favor."  
-"Essa é fácil! Mentira, nem ideia."  
-"Resposta temporariamente indisponível. Tente nunca mais."  
-"Google que lute."  
-"Entre a dúvida e a certeza, escolhi dormir."  
-"A resposta é 42. Sempre é."  
-"Se eu te contar, você promete não rir?"  
-"Resposta patrocinada por achismos S.A."  
-"Hoje não, Faro."  
-"Consulte seu horóscopo, talvez ele ajude."  
-"Tô pensando... Pensando... Pensando... Deu tela azul."  
-"A culpa é do Mercúrio retrógrado."  
-"A resposta correta depende do humor do dia."  
-"Olha, sinceramente? Nem eu sei."  
-"Se eu soubesse, você acha que estaria aqui?"  
-"Tá achando que é fácil, né?"  
-"Respondo se ganhar um chocolate."  
-"Precisa mesmo de uma resposta ou era só carência?"  
-"Meu cérebro foi tirar férias sem avisar."  
-"Claro que sim. Ou talvez não. Quem sabe?"  
-"Essa pergunta tá fora da minha área de atuação."  
-"Tente de novo com mais fé."  
-"Segundo estudos que acabei de inventar, sim."  
-"A resposta pode chocar, então prefiro ficar quieto."  
-"Sim, com ressalvas. Não, com entusiasmo."  
-"Resposta: Talvez. Explicação: Preguiça."  
-"Não sei, não quero saber e tenho raiva de quem sabe."  
-"Resposta encontrada no fundo de um pacote de bolacha."  
-"Preciso consultar o manual de instruções da vida."  
-"Bota a culpa no estagiário."  
-"Essa é fácil! Só que não."  
-"Minha bola de cristal quebrou hoje de manhã."  
-"Confia em mim que vai dar bom (ou não)."  
-"Meu gato pisou no teclado, então tá aí a resposta."  
-"Resposta enviada pelos Correios. Chega em 10 dias úteis."  
-"Aceita pix de sabedoria?"  
-"Protocolo 123: Fingir que sabe."  
-"Fala sério, nem você acreditaria em mim."  
-"Em caso de dúvida, invente uma resposta."  
-"Se a resposta fosse fácil, já tava no Wikipedia."  
-"Preferia estar respondendo outra pergunta."  
-"Essa resposta foi escondida pelo sistema de segurança."  
-"Um dia descubro, hoje não."  
-"Resposta gerada aleatoriamente por um hamster correndo numa roda."  
-"Sem condições emocionais pra isso."  
-"Resposta? Só amanhã depois do café."  
-"Essa informação se perdeu no tempo, igual minha dignidade."  
-"Estou num momento 'não me cobre'."  
-"Desculpa, estava distraído pensando em comida."  
-"Tá na dúvida? Chuta!"  
-"Decidi ignorar essa pergunta por motivos de força maior."  
-"Pior que tá bom."  
-"Vou responder igual aquele tio do churrasco: 'Antigamente era melhor'."  
-"Resposta desenhada à mão por uma criança de 3 anos."  
-"Resposta fora de área ou desligado."  
-"Ah, pergunta pro seu coração!"  
-"A resposta é sim, mas só se você prometer não contar pra ninguém."  
-"De acordo com fontes não confiáveis: sim."  
-"Informação validada por um passarinho."  
-"Um panda aprovou essa resposta."  
-"Essa resposta foi feita no modo turbo da zoeira."  
-"Confia que vai dar certo. Confia muito."  
-"Sinal fraco, tente novamente mais tarde."  
-"Pela minha vasta experiência de absolutamente nada: sim."  
-"Sim, mas só em Marte."  
-"Talvez sim, talvez não, talvez pizza."  
-"Tô com sono, aceita qualquer resposta?"  
-"Resposta baseada em fatos alternativos."  
-"Consulte o oráculo da esquina."  
-"Essa pergunta já foi respondida em um universo paralelo."  
-"Prefiro não opinar para não ser cancelado."  
-"Resposta? Só se for em forma de meme."  
-"Pergunta complexa, resposta aleatória."  
-"Resposta com selo de qualidade duvidosa."  
-"Preciso jogar uma moeda pra decidir."  
-"Vou precisar de um café pra processar isso aí."  
-"Com grandes perguntas vem grandes desculpas."  
-"Daria tudo para saber responder, mas não sei."  
-"Essa resposta foi comprada no AliExpress."  
-"Procure saber (eu também queria)."  
-"Informação baseada em estudos de WhatsApp."  
-"Quem sou eu na fila do pão pra responder isso?"  
-"Essa resposta é patrocinada por ninguém."  
-"Use sua imaginação, é grátis."  
-"Talvez. E se não for, finge que foi."  
-"Resposta randomizada: Bife acebolado."  
-"Errei tentando acertar. Valeu?"  
-"Isso aí é mistério da vida, melhor aceitar."
-"Se eu soubesse, você seria o último a saber."  
-"Essa pergunta era melhor ter ficado na sua cabeça."  
-"Respondo? Respondo. Errado, mas respondo."  
-"Se for pra errar, prefiro errar com estilo."  
-"Parabéns, você acaba de ganhar um vale nada."  
-"Por essa pergunta, você deveria pagar uma multa."  
-"Minha paciência foi removida por motivos técnicos."  
-"Prefiro tomar banho de óleo quente do que pensar nessa resposta."  
-"Vou te responder com a indiferença de quem não se importa."  
-"Essa dúvida morreu de tédio."  
-"Que pergunta maravilhosa... pra nunca mais fazer."  
-"Ah, não sei. Pergunta pra sua consciência (se tiver)."  
-"Isso é uma pergunta ou um pedido de socorro?"  
-"Você já pensou em procurar tratamento?"  
-"Essa pergunta ofendeu minha preguiça."  
-"Minha vontade de responder bateu em você e voltou chorando."  
-"Resposta: Tanto faz. Próxima tragédia?"  
-"Com base em absolutamente nada, a resposta é 'não'."  
-"Se eu te respondesse, te deixaria ainda mais confuso."  
-"Preciso de álcool gel só de ter lido isso."  
-"Melhor errar rápido do que pensar demais."  
-"Essa dúvida é igual a Wi-Fi público: insegura e perigosa."  
-"Você deveria receber um troféu... de consolação."  
-"Se eu ganhasse um real por pergunta ruim, seria bilionário agora."  
-"Eu até ia responder, mas percebi que você não merece."  
-"Que pergunta bonita! Pena que a resposta é horrível."  
-"Com toda a certeza da minha ignorância: talvez."  
-"Eu não responderia nem sob tortura leve."  
-"Essa pergunta vai para o museu dos horrores."  
-"Faz o seguinte: inventa a resposta e me agradece depois."  
-"Se existir um inferno para perguntas, a sua já tem lugar VIP."  
-"Minha cabeça virou purê depois dessa."  
-"Essa pergunta é um golpe de karatê na lógica."  
-"Se pensar fosse crime, você estava inocente."  
-"Responder essa pergunta seria crime contra a sanidade."  
-"Prefiro correr uma maratona descalço do que pensar nisso."  
-"Resposta? Só se me pagarem em pizza."  
-"Essa dúvida era melhor ter sido aborto."  
-"Minhas expectativas estavam baixas, mas você superou."  
-"Essa pergunta causou a terceira guerra no meu cérebro."  
-"Se eu fosse te responder, perderíamos ambos a dignidade."  
-"Prefiro fritar meus neurônios do que tentar entender isso."  
-"Isso é uma pergunta ou um delírio coletivo?"  
-"Eu não tô aqui pra fazer sentido."  
-"Pensar em resposta? Deixa pra quem ainda tem esperança."  
-"Quer resposta? Compra um biscoito da sorte."  
-"Essa pergunta me fez perder três anos de vida."  
-"Você tem a incrível habilidade de piorar o improvável."  
-"Você é o motivo pelo qual existe botão de 'silenciar'."  
-"Minha resposta: 'Kkkkkk não'."  
-"Melhor consultar um especialista... em vergonha alheia."  
-"Se eu responder isso, meu QI cai 10 pontos."  
-"Essa dúvida é um insulto à evolução humana."  
-"Você é o Dark Souls das perguntas ruins."  
-"Eu até pensaria, mas prefiro manter minha saúde mental."  
-"Prefiro ser atropelado por um trator filosófico do que tentar."  
-"Minha resposta é um grande e sonoro 'não'."  
-"Você deveria ser estudado pela ciência. De longe."  
-"Se existisse um campeonato de perguntas ruins, você seria MVP."  
-"Essa pergunta é tão ruim que deveria pagar aluguel pra existir."  
-"Você pediu sinceridade, agora aguenta."  
-"Respondi mentalmente. E a resposta foi 'pelo amor de Deus, não'."  
-"Essa pergunta é mais aleatória que playlist de DJ bêbado."  
-"Respondo só se prometer nunca mais perguntar nada."  
-"Tá tentando descobrir se meu cérebro ainda funciona, né?"  
-"Desculpa, não entendi. Mas pela sua cara foi melhor assim."  
-"Você acabou de desbloquear o modo sarcasmo."  
-"Já ouvi perguntas ruins, mas a sua se superou."  
-"Seus neurônios pedem socorro."  
-"Essa pergunta deixou meu espírito cansado."  
-"Vou fingir que não vi pra manter minha dignidade intacta."  
-"Essa pergunta é tão fora de contexto que deveria ser poesia."  
-"Respondo depois que a humanidade evoluir mais um pouco."  
-"Você e essa pergunta formam um belo casal: desespero e vergonha."  
-"Tá tentando entrar no Guinness de pergunta mais sem noção?"  
-"Essa pergunta é o equivalente verbal de tropeçar no próprio pé."  
-"Meus olhos rolaram tanto que agora vejo 360°."  
-"Deixe essa dúvida pra vida resolver. Eu não quero."  
-"Se pergunta idiota fosse energia, você iluminava o planeta."  
-"Você merece uma resposta. Mas não vai ser hoje."  
-"Essa pergunta é o Chernobyl do bom senso."  
-"Vou fingir que você fez uma pergunta inteligente."  
-"Se fosse pra responder coisa assim, eu ligava pra minha sogra."  
-"Com esse nível de pergunta, nem coaching salva."  
-"A sua dúvida é a resposta pra porque o mundo não dá certo."  
-"Prefiro virar ermitão do que pensar nessa resposta."  
-"Pergunta aleatória detected. Autodestruição em 3... 2... 1..."  
-"Parabéns, você venceu: Um bilhete só de ida pro limbo do raciocínio."  
-"Essa dúvida foi criada numa rave de más ideias."  
-"Você tem talento para deixar Platão chorando."  
-"Depois dessa pergunta, até a Wikipédia travou."  
-"Essa dúvida é a crise existencial em forma de frase."  
-"Continue assim e você zera o bom senso em speedrun."  
-"Essa pergunta deveria ser crime inafiançável."  
-"Faz igual a vida: finge que entendeu e segue em frente."  
-"Se a ignorância fosse esporte, você era campeão olímpico."  
-"Eu pensei numa resposta, mas ela fugiu gritando."  
-"Essa pergunta foi feita em parceria com o caos absoluto."  
-"Você já pensou em ser roteirista de tragédia?"  
-"Se existisse prêmio de ruindade criativa, você era unanimidade."
-
+  "Vai pesquisar no Google, preguiçoso!",
+  "Compra uma Barsa e vai estudar!",
+  "Sério que você precisa de ajuda pra isso?",
+  "Até uma pedra saberia essa resposta.",
+  "Não sou seu professor particular.",
+  "Já pensou em usar o cérebro?",
+  "Não tenho paciência pra isso hoje.",
+  "Você tá de brincadeira comigo, né?",
+  "Pergunta pro seu vizinho, talvez ele saiba.",
+  "Vai estudar e para de me encher!",
+  "Achei que ninguém poderia fazer uma pergunta pior, até você chegar.",
+  "Nem vale a pena responder isso.",
+  "Google tá aí pra isso, mané!",
+  "Isso aí até minha avó sabe!",
+  "Me poupe, se poupe, nos poupe.",
+  "Não sou pago pra te ensinar coisas básicas.",
+  "Que pergunta imbecil, faça outra.",
+  "Cara... sério mesmo que você perguntou isso?",
+  "Tente de novo. Talvez menos vergonha dessa vez.",
+  "Seja útil, vai ler um livro."
 ];
 
-function responder() {
-  const pergunta = document.getElementById("pergunta").value;
-  const respostaElemento = document.getElementById("resposta");
-
-  if (pergunta.trim() === "") {
-    respostaElemento.innerText = "Escreve alguma coisa, ô vazio!";
-    return;
-  }
-
-  const respostaAleatoria = respostasRudes[Math.floor(Math.random() * respostasRudes.length)];
-  respostaElemento.innerText = respostaAleatoria;
-} 
 // Atualiza o link do botão de WhatsApp
 function atualizarBotaoWhatsapp(pergunta, resposta) {
   const link = `https://wa.me/?text=Olha%20essa%20resposta%20genial%20do%20ChatOGPT:%0A%0A"${pergunta}"%20-%3E%20"${resposta}"%0A%0AConfere%20tamb%C3%A9m:%20https://chato-gpt.github.io/chatogpt/`;
   document.getElementById("botaoWhatsapp").href = link;
 }
 
-// Modificar a função "responder" para chamar atualizarBotaoWhatsapp
 function responder() {
   const pergunta = document.getElementById("pergunta").value;
   const respostaElemento = document.getElementById("resposta");
@@ -255,4 +41,3 @@ function responder() {
   respostaElemento.innerText = respostaAleatoria;
   atualizarBotaoWhatsapp(pergunta, respostaAleatoria);
 }
-
