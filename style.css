@@ -1,88 +1,85 @@
 body {
-  background-color: #f4f4f4;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3f4f6;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
 
-header {
-  background-color: #ffffff;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.logo-container {
+  margin-top: 30px;
 }
 
 .logo {
-  height: 80px;
+  width: 200px;
+  height: auto;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.loading-phrase {
-  margin: 20px 0;
-  font-size: 18px;
+.loading-message {
+  margin: 10px;
   font-weight: bold;
-  color: #555;
+  color: #888;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 .chat-container {
+  background: #fff;
   width: 100%;
   max-width: 600px;
-  background: #fff;
   padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  overflow-y: auto;
-  min-height: 300px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.input-container {
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.user {
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+.bot {
+  color: #065f46;
+}
+
+form {
   display: flex;
   gap: 10px;
-  width: 100%;
-  max-width: 600px;
 }
 
 input[type="text"] {
-  flex: 1;
+  flex-grow: 1;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 16px;
 }
 
 button {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff;
+  border-radius: 8px;
+  background-color: #2563eb;
   color: white;
-  font-size: 16px;
-  border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
-}
-
-.pergunta {
-  text-align: right;
-  margin: 10px 0;
-  color: #007bff;
-}
-
-.resposta {
-  text-align: left;
-  margin: 10px 0;
-  color: #28a745;
+  background-color: #1d4ed8;
 }
