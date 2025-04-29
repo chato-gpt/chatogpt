@@ -1,5 +1,3 @@
-// script.js atualizado com correções
-
 const frasesDeCarregamento = [
   "Carregando ideias malucas...",
   "Conectando hemisférios cerebrais...",
@@ -33,7 +31,7 @@ const respostas = [
   "Essa me fez reavaliar minha existência virtual.",
   "Prefiro responder um captcha do que isso.",
   "Tenho medo da resposta que você quer.",
-  "Resposta: 42. Não pergunte mais nada."
+  "Resposta: 42. Não pergunte mais nada.",
   "Essa pergunta me pegou de surpresa!",
   "Interessante... muito interessante!",
   "Gostei! Manda mais.",
@@ -43,11 +41,7 @@ const respostas = [
   "Sou só um cérebro com Wi-Fi, mas diria que sim.",
   "Sábio é quem pergunta. Engraçado sou eu.",
   "Já ouvi coisa parecida numa série sci-fi.",
-  "Você está testando minha paciência ou minha inteligência? 😄"
-  "Essa pergunta me pegou de surpresa!",
-  "Interessante... muito interessante!",
-  "Gostei! Manda mais.",
-  "Hum... vou pensar nisso.",
+  "Você está testando minha paciência ou minha inteligência? 😄",
   "Meu processador está sobrecarregado com tanto afeto.",
   "Deixe-me alinhar meus neurônios...",
   "Conexão intergaláctica estabelecida.",
@@ -105,6 +99,7 @@ function init() {
   if (input) {
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
+        e.preventDefault();
         handleSend();
       }
     });
