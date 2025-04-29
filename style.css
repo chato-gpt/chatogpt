@@ -1,10 +1,11 @@
 /* reset mínimo */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; }
 
 body {
+  margin: 0;
   background-color: #343541;
   color: #e5e5e5;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,14 +38,15 @@ body {
 }
 
 .chat-header h1 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #00ffcc;
+  margin: 0;
 }
 
 .loading-text {
   padding: 8px 16px;
   font-style: italic;
-  color: #999;
+  color: #bbb;
 }
 
 .chat-container {
@@ -54,6 +56,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  scroll-behavior: smooth;
+}
+
+/* custom scrollbar */
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+.chat-container::-webkit-scrollbar-track {
+  background: #2e2e2e;
 }
 
 .message {
@@ -66,15 +81,12 @@ body {
 .message.user {
   align-self: flex-end;
   background-color: #444654;
-  color: #fff;
-  border-bottom-right-radius: 2px;
 }
 
 .message.bot {
   align-self: flex-start;
   background-color: #343541;
-  color: #e5e5e5;
-  border-bottom-left-radius: 2px;
+  border: 1px solid #444654;
 }
 
 .input-area {
@@ -82,30 +94,35 @@ body {
   gap: 8px;
   padding: 12px 16px;
   background-color: #343541;
+  border-top: 1px solid #3a3b3c;
 }
 
 .input-area textarea {
   flex: 1;
   resize: none;
-  height: 60px;
-  padding: 10px;
+  height: 50px;
+  padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #444654;
   color: #e5e5e5;
   font-size: 1rem;
 }
 
+.input-area textarea::placeholder {
+  color: #bbb;
+}
+
 .input-area button {
-  background-color: #00ffcc;
+  background-color: #10a37f;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 0 20px;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .input-area button:hover {
-  background-color: #00cc99;
+  background-color: #0e8c6d;
 }
