@@ -1,76 +1,66 @@
-
-const frasesDeCarregamento = [
-  "Carregando ideias malucas...",
-  "Conectando hemisférios cerebrais...",
-  "Buscando sabedoria nos confins da internet...",
-  "Consultando um sábio monge digital...",
-  "Esperando o Wi-Fi do vizinho colaborar..."
+const respostasNormais = [
+  "Vai pesquisar no Google!",
+  "Compra uma Barsa e vai estudar.",
+  "Essa pergunta foi aprovada pelo Ministério da Perda de Tempo.",
+  "Você realmente achou que eu ia responder isso?",
+  "Só pode estar de sacanagem...",
+  "Eu cobraria pra responder isso, mas ainda não aceito Pix.",
+  "Sua dúvida é tão profunda quanto um pires.",
+  "Volta duas casas e tenta de novo.",
+  "Meu processador travou só de ler isso.",
+  "Você acabou de desperdiçar 10 segundos da minha IA.",
+  "Se eu tivesse olhos, estaria revirando eles agora."
 ];
 
-const respostas = [
-  "Essa pergunta me ofendeu emocionalmente.",
-  "Vou fingir que não vi essa pergunta.",
-  "Já ouvi perguntas melhores de uma torradeira.",
-  "Resposta: 42. Não pergunte mais nada.",
-  "Meu processador travou de vergonha alheia.",
-  "Você é pago pra isso?",
-  "Sério mesmo que você digitou isso?",
-  "Prefiro responder um captcha do que isso.",
-  "Gostei! Manda mais.",
-  "Isso foi uma pergunta ou um poema moderno?"
+const respostasOfendidas = [
+  "Essa pergunta é tão ruim que ofendeu até o HTML.",
+  "Você acha que eu sou palhaço? Responda você mesmo!",
+  "Já pensou em manter isso só pra você?",
+  "A inteligência aqui artificial sou eu, mas você tá competindo!"
 ];
 
-function init() {
-  const loadingText = document.getElementById("loading-text");
-  if (loadingText) {
-    loadingText.innerText =
-      frasesDeCarregamento[Math.floor(Math.random() * frasesDeCarregamento.length)];
+function responder() {
+  const pergunta = document.getElementById('pergunta').value.trim();
+  const respostaDiv = document.getElementById('resposta');
+  const perguntaTexto = document.getElementById('perguntaTexto');
+  const som = document.getElementById('somResposta');
+  const btn = document.getElementById('perguntarBtn');
+
+  if (!pergunta) {
+    respostaDiv.textContent = "Digite alguma coisa antes, gênio.";
+    respostaDiv.className = "resposta visivel";
+    return;
   }
 
-  document.getElementById("send-btn").addEventListener("click", handleSend);
-  document.getElementById("pergunta").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleSend();
-    }
-  });
+  respostaDiv.className = "resposta visivel";
+  respostaDiv.textContent = "Pensando";
+  perguntaTexto.textContent = `Pergunta: ${pergunta}`;
 
-  document.getElementById("whatsapp-btn").addEventListener("click", shareWhatsApp);
-}
+  btn.classList.add("animando");
 
-function handleSend() {
-  const input = document.getElementById("pergunta");
-  const texto = input.value.trim();
-  const chat = document.getElementById("chat-container");
-
-  if (!texto) return;
-
-  const userDiv = document.createElement("div");
-  userDiv.className = "message user";
-  userDiv.innerText = texto;
-  chat.appendChild(userDiv);
-  chat.scrollTop = chat.scrollHeight;
-
-  document.getElementById("loading-text").innerText = "Pensando como um gênio preguiçoso...";
+  let pontos = 0;
+  const intervalo = setInterval(() => {
+    respostaDiv.textContent = "Pensando" + ".".repeat(pontos % 4);
+    pontos++;
+  }, 400);
 
   setTimeout(() => {
-    const botDiv = document.createElement("div");
-    botDiv.className = "message bot";
-    botDiv.innerText = respostas[Math.floor(Math.random() * respostas.length)];
-    chat.appendChild(botDiv);
-    chat.scrollTop = chat.scrollHeight;
-    document.getElementById("loading-text").innerText = "";
-  }, 800);
+    clearInterval(intervalo);
+    btn.classList.remove("animando");
+    const modoOfendido = Math.random() < 0.3;
+    const respostaAleatoria = modoOfendido ?
+      respostasOfendidas[Math.floor(Math.random() * respostasOfendidas.length)] :
+      respostasNormais[Math.floor(Math.random() * respostasNormais.length)];
 
-  input.value = "";
+    respostaDiv.textContent = respostaAleatoria;
+    som.play();
+  }, 2000);
 }
 
-function shareWhatsApp() {
-  const url = window.location.href;
-  const text = encodeURIComponent(
-    `Encontrei esse site hilário: Chat-O-GPT 🤯💬\nMande sua pergunta e se prepare pra uma resposta nonsense!\n👉 ${url}`
-  );
-  window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
-}
-
-document.addEventListener("DOMContentLoaded", init);
+document.getElementById("whatsappBtn").onclick = function () {
+  const pergunta = document.getElementById('pergunta').value;
+  const resposta = document.getElementById('resposta').textContent;
+  const texto = `Perguntei pro ChatOGPT: "${pergunta}"\nResposta: "${resposta}" 😂`;
+  const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
+  window.open(url, "_blank");
+};
