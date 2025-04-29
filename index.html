@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat-O-GPT</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
+  <div class="logo-container">
+    <img src="logo.png" alt="Chat-O-GPT Logo" class="logo" />
+  </div>
 
-  <header>
-    <img src="logo.png" alt="Chat-O-GPT Logo" class="logo">
-  </header>
+  <div class="loading-message" id="loading">Carregando cérebro...</div>
 
-  <main>
-    <div id="loading-phrase" class="loading-phrase"></div>
-    <div id="chat-container" class="chat-container"></div>
-
-    <div class="input-container">
-      <input type="text" id="pergunta" placeholder="Digite sua pergunta...">
-      <button onclick="enviarPergunta()">Enviar</button>
-    </div>
-  </main>
+  <div class="chat-container">
+    <div class="messages" id="messages"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Faça uma pergunta..." autocomplete="off" required />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>
