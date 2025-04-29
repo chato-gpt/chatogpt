@@ -1,42 +1,39 @@
-// script.js
+// script.js atualizado com correções
 
-// Captura erros no console para facilitar depuração
-window.onerror = (msg, url, line, col, error) => {
-  console.error(`Error: ${msg} em ${url}:${line}:${col}`, error);
-};
-
-// Frases de carregamento
 const frasesDeCarregamento = [
   "Carregando ideias malucas...",
-  "Conectando hemisférios...",
-  "Pensando como um gênio...",
-  "Formatando respostas...",
-  "Consultando o oráculo digital...",
+  "Conectando hemisférios cerebrais...",
+  "Buscando sabedoria nos confins da internet...",
+  "Consultando um sábio monge digital...",
+  "Pedindo ajuda para o estagiário virtual...",
   "Esperando o Wi-Fi do vizinho colaborar...",
-  "Falando com um pombo-correio mental..."
+  "Usando força bruta e memes para pensar...",
+  "Trocando o disquete da sabedoria...",
+  "Imaginando uma resposta digna de Oscar...",
+  "Apertando todos os botões e torcendo..."
 ];
 
-// Seu roll de respostas (adicione as 200+ aqui)
 const respostas = [
-  "Essa pergunta me pegou de surpresa!",
-  "Interessante... muito interessante!",
-  "Você acordou hoje e escolheu confundir, né?",
-  "Essa pergunta merece um prêmio de esquisitice!",
-  "Só um minuto que vou consultar os deuses do nonsense...",
-  "Não tenho certeza se isso foi uma pergunta ou um poema moderno.",
-  "Se essa pergunta fosse um prato, seria miojo gourmet: simples, mas ousado!",
-  "Eu responderia, mas estou ocupado demais rindo dessa pergunta.",
-  "Isso aí é pra responder ou só pra admirar?",
-  "Que loucura... responde você agora!",
-  "Se eu tivesse um real pra cada pergunta estranha... teria uns 3 reais agora.",
-  "Hmmm... deixa eu pensar... não, continua sem sentido mesmo.",
-  "Olha, até o HAL 9000 ficou confuso com isso aí.",
-  "Resposta: sim, não, talvez. Próxima?",
-  "Você é pago pra fazer essas perguntas ou é só dom natural?",
-  "Essa foi tão boa que quase fechei o navegador.",
-  "Você treinou isso ou veio no instinto mesmo?",
-  "Resposta: chame um adulto responsável.",
-  "Tenho vergonha de admitir que entendi.",
+  "Você quer mesmo saber isso?",
+  "Essa pergunta me ofendeu emocionalmente.",
+  "Vou fingir que não vi essa pergunta.",
+  "Você está bem? Porque essa pergunta não tá.",
+  "Nem sua mãe acreditaria nessa dúvida.",
+  "Essa foi boa... boa pra ser ignorada!",
+  "Hmmm, interessante. Não.",
+  "Já considerou pesquisar no Orkut?",
+  "Se eu tivesse um neurônio físico, ele teria saído da sala agora.",
+  "Meu processador travou de vergonha alheia.",
+  "Você é pago pra isso?",
+  "Isso foi uma pergunta ou um poema moderno?",
+  "Sua dúvida é como Wi-Fi ruim: não faz sentido e só irrita.",
+  "Eu ia responder, mas preferi preservar minha dignidade artificial.",
+  "Essa eu deixo pro Google.",
+  "Já ouvi perguntas melhores de uma torradeira.",
+  "Essa me fez reavaliar minha existência virtual.",
+  "Prefiro responder um captcha do que isso.",
+  "Tenho medo da resposta que você quer.",
+  "Resposta: 42. Não pergunte mais nada."
   "Essa pergunta me pegou de surpresa!",
   "Interessante... muito interessante!",
   "Gostei! Manda mais.",
@@ -46,7 +43,7 @@ const respostas = [
   "Sou só um cérebro com Wi-Fi, mas diria que sim.",
   "Sábio é quem pergunta. Engraçado sou eu.",
   "Já ouvi coisa parecida numa série sci-fi.",
-  "Você está testando minha paciência ou minha inteligência?"
+  "Você está testando minha paciência ou minha inteligência? 😄"
   "Essa pergunta me pegou de surpresa!",
   "Interessante... muito interessante!",
   "Gostei! Manda mais.",
@@ -90,70 +87,71 @@ const respostas = [
   "Montei um memecraft só pra você.",
   "Não sou perfeito, mas tento bem.",
   "Guardando essa pergunta pra posteridade."
-  // ...adicione o restante de suas respostas aqui...
 ];
 
-// Inicializa controles após o DOM carregar
 function init() {
-  // Exibe frase de carregamento aleatória
-  const loadingEl = document.getElementById("loading-text");
-  loadingEl.innerText =
-    frasesDeCarregamento[
-      Math.floor(Math.random() * frasesDeCarregamento.length)
-    ];
+  const loadingText = document.getElementById("loading-text");
+  if (loadingText) {
+    loadingText.innerText =
+      frasesDeCarregamento[Math.floor(Math.random() * frasesDeCarregamento.length)];
+  }
 
-  // Evento do botão Enviar
   const sendBtn = document.getElementById("send-btn");
-  sendBtn.addEventListener("click", handleSend);
+  if (sendBtn) {
+    sendBtn.addEventListener("click", handleSend);
+  }
 
-  // Evento do botão WhatsApp
-  const whatsappBtn = document.getElementById("whatsapp-btn");
-  whatsappBtn.addEventListener("click", shareWhatsApp);
+  const input = document.getElementById("pergunta");
+  if (input) {
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        handleSend();
+      }
+    });
+  }
+
+  const shareBtn = document.getElementById("whatsapp-btn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", shareWhatsApp);
+  }
 }
 
-// Lógica de envio e resposta
 function handleSend() {
-  const inputEl = document.getElementById("pergunta");
-  const texto = inputEl.value.trim();
-  const chatEl = document.getElementById("chat-container");
-  const loadingEl = document.getElementById("loading-text");
+  const input = document.getElementById("pergunta");
+  const texto = input.value.trim();
+  const chat = document.getElementById("chat-container");
+  const loading = document.getElementById("loading-text");
 
   if (!texto) return;
 
-  // Adiciona mensagem do usuário
   const userDiv = document.createElement("div");
   userDiv.className = "message user";
   userDiv.innerText = texto;
-  chatEl.appendChild(userDiv);
-  chatEl.scrollTop = chatEl.scrollHeight;
+  chat.appendChild(userDiv);
+  chat.scrollTop = chat.scrollHeight;
 
-  // Mostra "pensando..."
-  loadingEl.innerText = "🤖 Pensando...";
+  if (loading) loading.innerText = "Pensando como um gênio preguiçoso...";
 
-  // Simula tempo de resposta
   setTimeout(() => {
     const botDiv = document.createElement("div");
     botDiv.className = "message bot";
     botDiv.innerText =
       respostas[Math.floor(Math.random() * respostas.length)];
-    chatEl.appendChild(botDiv);
-    chatEl.scrollTop = chatEl.scrollHeight;
+    chat.appendChild(botDiv);
+    chat.scrollTop = chat.scrollHeight;
 
-    // Limpa texto de loading
-    loadingEl.innerText = "";
+    if (loading) loading.innerText = "";
   }, 800);
 
-  inputEl.value = "";
+  input.value = "";
 }
 
-// Abre WhatsApp com mensagem pronta
 function shareWhatsApp() {
   const url = window.location.href;
   const text = encodeURIComponent(
-    `Dá uma olhada nesse Chat-O-GPT hilário e garante boas risadas: ${url}`
+    `Encontrei esse site hilário: Chat-O-GPT 🤯💬\nMande sua pergunta e se prepare pra uma resposta nonsense!\n👉 ${url}`
   );
   window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
 }
 
-// Configura tudo quando a página terminar de carregar
 document.addEventListener("DOMContentLoaded", init);
