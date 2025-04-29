@@ -1,23 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChatOGPT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat-O-GPT</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
-  <div class="container">
-    <h1>ChatOGPT</h1>
-    <p>Faça sua pergunta... se tiver coragem.</p>
-    <input type="text" id="pergunta" placeholder="Digite aqui..." />
-    <button id="perguntarBtn" onclick="responder()">Perguntar</button>
-    <div id="perguntaTexto" class="pergunta"></div>
-    <div id="resposta" class="resposta escondida">...</div>
-    <button id="whatsappBtn">Compartilhar no WhatsApp</button>
-  </div>
+  <header>
+    <img src="logo.png" alt="Logo Chat-O-GPT" class="logo" />
+    <p id="loading-text">Iniciando cérebro artificial...</p>
+  </header>
 
-  <audio id="somResposta" src="https://www.myinstants.com/media/sounds/fbi-open-up-sfx.mp3"></audio>
+  <main>
+    <div class="chat-container" id="chat-container"></div>
+
+    <div class="input-container">
+      <input type="text" id="pergunta" placeholder="Manda aí sua dúvida existencial..." />
+      <button id="send-btn">🎯</button>
+    </div>
+
+    <div class="share-container">
+      <p>Indique pro amigo que vive perguntando besteira:</p>
+      <button id="whatsapp-btn">
+        <img src="whatsapp-logo-1.png" alt="WhatsApp" />
+        Mandar no Zap!
+      </button>
+    </div>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
