@@ -16,7 +16,7 @@ const respostas = [
   "Hum... vou pensar nisso.",
   "Boa pergunta! A resposta é 42.",
   "Sou só um cérebro com Wi-Fi, mas diria que sim.",
-  "Você está testando minha paciência ou minha inteligência? 😄"
+  "Você está testando minha paciência ou minha inteligência?"
   "Deixe-me alinhar meus neurônios...",
   "Conexão intergaláctica estabelecida.",
   "Aviso: posso falar demais.",
