@@ -1,85 +1,73 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f3f4f6;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
-.logo-container {
-  margin-top: 30px;
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
 }
 
 .logo {
-  width: 200px;
+  width: 120px;
   height: auto;
-}
-
-.loading-message {
-  margin: 10px;
-  font-weight: bold;
-  color: #888;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.chat-container {
-  background: #fff;
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.messages {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 15px;
-}
-
-.message {
   margin-bottom: 10px;
 }
 
-.user {
-  color: #1e3a8a;
-  font-weight: bold;
+h1 {
+  font-size: 2.5rem;
+  color: #00ffcc;
 }
 
-.bot {
-  color: #065f46;
+.slogan {
+  font-style: italic;
+  color: #999;
+  margin-bottom: 20px;
 }
 
-form {
+.chat-box {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+textarea {
+  padding: 12px;
+  resize: none;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  height: 100px;
+  background-color: #1f1f1f;
+  color: #fff;
 }
 
 button {
-  padding: 10px 20px;
+  background-color: #00ffcc;
   border: none;
-  border-radius: 8px;
-  background-color: #2563eb;
-  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #1d4ed8;
+  background-color: #00cc99;
+}
+
+.response-box {
+  margin-top: 20px;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
 }
