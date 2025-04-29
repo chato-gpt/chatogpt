@@ -1,4 +1,8 @@
-// Frases de carregamento aleatórias
+// Para depurar: exibe erros no console caso algo falhe
+window.onerror = (msg, url, line, col, error) => {
+  console.error(`Error: ${msg} at ${url}:${line}:${col}`, error);
+};
+
 const frasesDeCarregamento = [
   "Carregando ideias malucas...",
   "Conectando hemisférios...",
@@ -20,42 +24,50 @@ const respostas = [
   "Você está testando minha paciência ou minha inteligência? 😄"
 ];
 
-window.onload = () => {
-  // Exibe frase de carregamento
-  const loading = document.getElementById("loading-text");
-  loading.innerText = frasesDeCarregamento[
+function init() {
+  const loadingEl = document.getElementById("loading-text");
+  loadingEl.innerText = frasesDeCarregamento[
     Math.floor(Math.random() * frasesDeCarregamento.length)
   ];
-};
 
-document.getElementById("send-btn").addEventListener("click", () => {
-  const input = document.getElementById("pergunta");
-  const texto = input.value.trim();
-  const chat = document.getElementById("chat-container");
-  const loading = document.getElementById("loading-text");
+  const sendBtn = document.getElementById("send-btn");
+  if (!sendBtn) {
+    console.error("Botão de enviar não encontrado (id 'send-btn').");
+    return;
+  }
+  sendBtn.addEventListener("click", handleSend);
+}
+
+function handleSend() {
+  const inputEl = document.getElementById("pergunta");
+  const texto = inputEl.value.trim();
+  const chatEl = document.getElementById("chat-container");
+  const loadingEl = document.getElementById("loading-text");
 
   if (!texto) return;
 
-  // Mensagem do usuário
+  // usuário
   const userDiv = document.createElement("div");
   userDiv.className = "message user";
   userDiv.innerText = texto;
-  chat.appendChild(userDiv);
-  chat.scrollTop = chat.scrollHeight;
+  chatEl.appendChild(userDiv);
+  chatEl.scrollTop = chatEl.scrollHeight;
 
   // “Pensando...”
-  loading.innerText = "🤖 Pensando...";
+  loadingEl.innerText = "🤖 Pensando...";
 
-  // Simula tempo de geração
+  // resposta simulada
   setTimeout(() => {
     const botDiv = document.createElement("div");
     botDiv.className = "message bot";
     botDiv.innerText =
       respostas[Math.floor(Math.random() * respostas.length)];
-    chat.appendChild(botDiv);
-    chat.scrollTop = chat.scrollHeight;
-    loading.innerText = ""; // limpa a frase
+    chatEl.appendChild(botDiv);
+    chatEl.scrollTop = chatEl.scrollHeight;
+    loadingEl.innerText = "";
   }, 800);
 
-  input.value = "";
-});
+  inputEl.value = "";
+}
+
+document.addEventListener("DOMContentLoaded", init);
